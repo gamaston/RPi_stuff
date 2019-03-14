@@ -22,6 +22,7 @@ def morse_S():
     dot()
     dot()
     dot()
+    # space at end of letter
     time.sleep(0.25)
 
 def morse_O():
@@ -29,6 +30,7 @@ def morse_O():
     dash()
     dash()
     dash()
+    # space at end of letter
     time.sleep(0.25)
 
 # GPIO setup for raspberry-pi; 
