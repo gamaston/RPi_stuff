@@ -23,7 +23,6 @@ def morse_S():
     dot()
     dot()
     # space at end of letter
-    # space at end of letter
     time.sleep(0.25)
 
 def morse_O():
