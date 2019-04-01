@@ -50,3 +50,7 @@ while True:
     except KeyboardInterrupt:
 # GPIO reset configuration
         GPIO.cleanup()
+        exit
+    except RuntimeError:
+        exit
+
