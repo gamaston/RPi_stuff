@@ -23,6 +23,7 @@ def morse_S():
     dot()
     dot()
     # space at end of letter
+    # space at end of letter
     time.sleep(0.25)
 
 def morse_O():
@@ -42,10 +43,11 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
 
 while True:
-    morse_S()
-    morse_O()
-    morse_S()
-    time.sleep(2)
-
+    try:
+        morse_S()
+        morse_O()
+        morse_S()
+        time.sleep(2)
+    except KeyboardInterrupt:
 # GPIO reset configuration
-GPIO.cleanup()
+        GPIO.cleanup()
