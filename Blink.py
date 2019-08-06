@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
+
 def blink(duration):
     """Control LED on-time with duration parameter"""
     GPIO.output(18, True)
@@ -9,13 +10,16 @@ def blink(duration):
     GPIO.output(18, False)
     time.sleep(0.25)
 
+
 def dash():
     """Blink LED for a morse-code dash"""
     blink(0.50)
 
+
 def dot():
     """Blink LED for a morse-code dot"""
     blink(0.25)
+
 
 def morse_S():
     """Blink LED for morse-code letter S"""
@@ -25,6 +29,7 @@ def morse_S():
     # space at end of letter
     time.sleep(0.25)
 
+
 def morse_O():
     """Blink LED for a morse-code letter O"""
     dash()
@@ -33,7 +38,8 @@ def morse_O():
     # space at end of letter
     time.sleep(0.25)
 
-# GPIO setup for raspberry-pi; 
+
+# GPIO setup for raspberry-pi;
 # no warnings when changing IOs to Out
 # use Broadcom GPIO pin numbering
 # and set pin 18 to an output to drive the LED
@@ -48,9 +54,8 @@ while True:
         morse_S()
         time.sleep(2)
     except KeyboardInterrupt:
-# GPIO reset configuration
+        # GPIO reset configuration
         GPIO.cleanup()
         exit
     except RuntimeError:
         exit
-
